@@ -49,8 +49,8 @@ while True:
         # Draw a rectangle around the face
         cv2.rectangle(frame, (left, top), (right, bottom), (0, 255, 0), 2)
 
-        # Draw the name below the face
-        cv2.putText(frame, name, (left + 6, bottom + 20), cv2.FONT_HERSHEY_DUPLEX, 0.5, (0, 255, 0), 1)
+        # Draw the name above the face
+        cv2.putText(frame, name, (left + 6, top + 20), cv2.FONT_HERSHEY_DUPLEX, 0.5, (0, 255, 0), 1)
 
     # Display the frame
     cv2.imshow('Face Recognition', frame)
