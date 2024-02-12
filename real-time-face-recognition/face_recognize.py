@@ -3,8 +3,7 @@ import numpy
 import face_recognition
 from face_data import FACE_DATA
 
-# Load and encode the training images for multiple persons
-# train_images = ['images/person1.jpg', 'images/person2.jpg']  # Add more images as needed
+
 known_encodings = []
 known_names = []
 
@@ -30,7 +29,6 @@ while True:
         break
 
     # Convert frame to RGB
-    # rgb_frame = frame[:, :, ::-1]
     rgb_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
 
     # Detect faces in the frame
@@ -38,6 +36,7 @@ while True:
     face_encodings = face_recognition.face_encodings(rgb_frame, face_locations)
 
     for (top, right, bottom, left), face_encoding in zip(face_locations, face_encodings):
+        
         # Compare the encoded face with known encodings
         matches = face_recognition.compare_faces(known_encodings, face_encoding)
         name = "Unknown"
